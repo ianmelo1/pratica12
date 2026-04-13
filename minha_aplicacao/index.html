@@ -1,13 +1,28 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>minha_aplicacao</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Nebula - Home</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Nebula</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="cadastro.html">Novo post</a></li>
+            <li><a href="listagem.html">Lista de dados</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>Feed de notícias</h1>
+    
+        <div id="feed-lista">
+            <p class="loading">Carregando posts...</p> 
+        </div>
+    </main>
+
+</body>
 </html>

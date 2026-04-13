@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula - Novo post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Nebula</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="cadastro.html">Novo post</a></li>
+            <li><a href="listagem.html">Lista de dados</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>Criar novo post</h1>
+        <form class="form-cadastro">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome..." required>
+
+            <label for="post">O que está pensando?</label>
+            <textarea id="post" name="post" rows="4" placeholder="Escreva aqui seu post..."></textarea>
+
+            <button type="submit">Publicar no feed</button>
+        </form>
+    </main>
+</body>
+</html>
