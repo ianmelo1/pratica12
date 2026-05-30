@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { useNebula } from '../context/NebulaContext';
 
 function Cadastro() {
   const [nome, setNome] = useState('');
   const [post, setPost] = useState('');
   const [erro, setErro] = useState('');
   const [sucesso, setSucesso] = useState('');
+  const { addPost } = useNebula();
+
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    
+    e.preventDefault();
     setErro('');
     setSucesso('');
 
@@ -21,7 +23,8 @@ function Cadastro() {
       return;
     }
 
-    setSucesso('Post validado com sucesso! (Pronto para enviar para o Feed)');
+    addPost({ nome, post });
+    setSucesso('Post publicado no feed com sucesso!');
     setNome('');
     setPost('');
   };
@@ -29,30 +32,30 @@ function Cadastro() {
   return (
     <main className="container">
       <h1>Criar Novo Post</h1>
-      
+
       {erro && <p style={{ color: '#ff6b6b', fontWeight: 'bold', marginBottom: '15px' }}>⚠️ {erro}</p>}
       {sucesso && <p style={{ color: '#2ecc71', fontWeight: 'bold', marginBottom: '15px' }}>✨ {sucesso}</p>}
 
       <form className="form-cadastro" onSubmit={handleSubmit}>
         <label htmlFor="nome">Seu nome:</label>
-        <input 
-          type="text" 
-          id="nome" 
-          name="nome" 
-          placeholder="Digite seu nome..." 
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Digite seu nome..."
           value={nome}
-          onChange={(e) => setNome(e.target.value)} 
-          required 
+          onChange={(e) => setNome(e.target.value)}
+          required
         />
 
         <label htmlFor="post">O que está pensando?</label>
-        <textarea 
-          id="post" 
-          name="post" 
-          rows="4" 
+        <textarea
+          id="post"
+          name="post"
+          rows="4"
           placeholder="Escreva aqui seu post..."
           value={post}
-          onChange={(e) => setPost(e.target.value)} 
+          onChange={(e) => setPost(e.target.value)}
           required
         ></textarea>
 
