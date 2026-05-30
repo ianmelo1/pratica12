@@ -35,7 +35,19 @@ function Home() {
         <div id="feed-lista">
           {todosOsPosts.map((item) => (
             <div key={item.id} style={{ borderBottom: '1px solid #eee', padding: '12px 0' }}>
-              <strong>{item.nome}</strong>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                <strong>{item.nome}</strong>
+                <span style={{
+                  fontSize: '0.7rem',
+                  padding: '2px 8px',
+                  borderRadius: '99px',
+                  background: String(item.id).startsWith('api-') ? '#74B9FF' : '#55E6C1',
+                  color: 'white',
+                  fontWeight: 'bold'
+                }}>
+                  {String(item.id).startsWith('api-') ? 'API' : 'Novo'}
+                </span>
+              </div>
               <p>{item.post}</p>
             </div>
           ))}
